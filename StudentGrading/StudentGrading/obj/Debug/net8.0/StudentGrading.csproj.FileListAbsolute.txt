@@ -12,3 +12,4 @@ C:\Users\melis\FreeCodeCampPractice\ChallengeProjects\StudentGrading\StudentGrad
 C:\Users\melis\FreeCodeCampPractice\ChallengeProjects\StudentGrading\StudentGrading\obj\Debug\net8.0\StudentGrading.pdb
 C:\Users\melis\FreeCodeCampPractice\ChallengeProjects\StudentGrading\StudentGrading\obj\Debug\net8.0\StudentGrading.genruntimeconfig.cache
 C:\Users\melis\FreeCodeCampPractice\ChallengeProjects\StudentGrading\StudentGrading\obj\Debug\net8.0\ref\StudentGrading.dll
+C:\Users\melis\FreeCodeCampPractice\ChallengeProjects\StudentGrading\StudentGrading\obj\Debug\net8.0\StudentGrading.sourcelink.json
