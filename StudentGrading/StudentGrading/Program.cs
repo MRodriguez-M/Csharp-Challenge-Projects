@@ -31,23 +31,25 @@ foreach (string name in studentNames)
         studentScores = loganScores;
 
     int sumAssignmentScores = 0;
-
     decimal currentStudentGrade = 0;
-
     int gradedAssignments = 0;
+    int examScores = 0;
+    decimal examScoreAverage = 0;
 
     foreach (int score in studentScores)
     {
         gradedAssignments += 1;
 
-        if (gradedAssignments <= examAssignments)
+        if (gradedAssignments <= examAssignments) {
             sumAssignmentScores += score;
-
+            examScores += score;
+        }
         else
             sumAssignmentScores += score / 10;
     }
 
     currentStudentGrade = (decimal)(sumAssignmentScores) / examAssignments;
+    examScoreAverage = (decimal)(examScores) / examAssignments;
 
     if (currentStudentGrade >= 97)
         currentStudentLetterGrade = "A+";
@@ -88,5 +90,5 @@ foreach (string name in studentNames)
     else
         currentStudentLetterGrade = "F";
 
-    Console.WriteLine($"{currentStudent}\t\t0\t\t{currentStudentGrade}\t{currentStudentLetterGrade}\t0 (0 pts)");
+    Console.WriteLine($"{currentStudent}\t\t{examScoreAverage}\t\t{currentStudentGrade}\t{currentStudentLetterGrade}\t0 (0 pts)");
 }
