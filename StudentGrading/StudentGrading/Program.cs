@@ -35,21 +35,31 @@ foreach (string name in studentNames)
     int gradedAssignments = 0;
     int examScores = 0;
     decimal examScoreAverage = 0;
+    decimal extraCreditScores = 0;
+    decimal extraCreditPoints = 0;
+    int extraCreditSum = 0;
+    int extraCreditAverage = 0;
 
     foreach (int score in studentScores)
     {
         gradedAssignments += 1;
 
-        if (gradedAssignments <= examAssignments) {
+        if (gradedAssignments <= examAssignments)
+        {
             sumAssignmentScores += score;
             examScores += score;
         }
-        else
+        else {
             sumAssignmentScores += (decimal)score / 10;
+            extraCreditScores += (decimal)score / 10;
+            extraCreditSum += score;
+        }
     }
 
     currentStudentGrade = (decimal)(sumAssignmentScores) / examAssignments;
     examScoreAverage = (decimal)(examScores) / examAssignments;
+    extraCreditPoints = (decimal)(extraCreditScores) / examAssignments;
+    extraCreditAverage = extraCreditSum / (studentScores.Length - examAssignments);
 
     if (currentStudentGrade >= 97)
         currentStudentLetterGrade = "A+";
@@ -90,5 +100,5 @@ foreach (string name in studentNames)
     else
         currentStudentLetterGrade = "F";
 
-    Console.WriteLine($"{currentStudent}\t\t{examScoreAverage}\t\t{currentStudentGrade}\t{currentStudentLetterGrade}\t0 (0 pts)");
+    Console.WriteLine($"{currentStudent}\t\t{examScoreAverage}\t\t{currentStudentGrade}\t{currentStudentLetterGrade}\t{extraCreditAverage} ({extraCreditPoints} pts)");
 }
