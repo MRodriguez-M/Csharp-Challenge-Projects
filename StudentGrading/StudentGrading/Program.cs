@@ -30,7 +30,7 @@ foreach (string name in studentNames)
     else if (currentStudent == "Logan")
         studentScores = loganScores;
 
-    int sumAssignmentScores = 0;
+    decimal sumAssignmentScores = 0;
     decimal currentStudentGrade = 0;
     int gradedAssignments = 0;
     int examScores = 0;
@@ -45,7 +45,7 @@ foreach (string name in studentNames)
             examScores += score;
         }
         else
-            sumAssignmentScores += score / 10;
+            sumAssignmentScores += (decimal)score / 10;
     }
 
     currentStudentGrade = (decimal)(sumAssignmentScores) / examAssignments;
