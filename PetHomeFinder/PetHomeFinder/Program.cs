@@ -301,6 +301,19 @@ do
                             }
                         }
                     }
+
+                    while (ourAnimals[i, 4] == "Physical description: ") {
+                        Console.WriteLine($"Enter a physical description for {ourAnimals[i, 0]} (size, color, gender, weight, housebroken)");
+                        readResult = Console.ReadLine();
+
+                        if (readResult != null) {
+                            animalPhysicalDescription = readResult.ToLower();
+
+                            if (!string.IsNullOrWhiteSpace(animalPhysicalDescription)) {
+                                ourAnimals[i, 4] = "Physical description: " + animalPhysicalDescription;
+                            }
+                        }
+                    }
                 }
             }
 
