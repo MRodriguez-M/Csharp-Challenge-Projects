@@ -337,9 +337,23 @@ do
                             }
                         }
                     }
+
+                    while (ourAnimals[i, 5] == "Personality: ") {
+                        Console.WriteLine($"Enter a personality description for {ourAnimals[i, 0]} (likes or dislikes, tricks, energy level)");
+                        readResult = Console.ReadLine();
+
+                        if (readResult != null) {
+                            animalPersonalityDescription = readResult.ToLower();
+
+                            if (!string.IsNullOrWhiteSpace(animalPersonalityDescription)) {
+                                ourAnimals[i, 5] = "Personality: " + animalPersonalityDescription;
+                            }
+                        }
+                    }
                 }
             }
 
+            Console.WriteLine("Nickname and personality description fields are complete for all of our friends.");
             Console.WriteLine("Press the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
