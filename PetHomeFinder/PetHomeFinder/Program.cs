@@ -323,7 +323,23 @@ do
 
         case "4":
             // Ensure animal nicknames and personality descriptions are complete
-            Console.WriteLine("Challenge Project - please check back soon to see progress.");
+            for (int i = 0; i < maxPets; i++) {
+                if (ourAnimals[i, 0] != "ID #: ") {
+                    while (ourAnimals[i, 3] == "Nickname: ") {
+                        Console.WriteLine($"Enter a nickname for {ourAnimals[i, 0]}");
+                        readResult = Console.ReadLine();
+
+                        if (readResult != null) {
+                            animalNickname = readResult.ToLower();
+
+                            if (!string.IsNullOrWhiteSpace(animalNickname)) {
+                                ourAnimals[i, 3] = "Nickname: " + animalNickname;
+                            }
+                        }
+                    }
+                }
+            }
+
             Console.WriteLine("Press the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
